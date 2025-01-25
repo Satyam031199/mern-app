@@ -1,0 +1,11 @@
+ARG NODE_VERSION=20.15.0
+
+FROM node:${NODE_VERSION}-alpine
+
+WORKDIR /app
+
+COPY . .
+
+EXPOSE 5001
+
+CMD npm run dev
