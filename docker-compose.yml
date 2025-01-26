@@ -1,0 +1,16 @@
+services:
+  web:
+    depends_on:
+      - api
+    build: ./frontend
+    ports:
+      - 5173:5173
+    environment:
+      - VITE_APP_BASE_URL=http://54.196.175.240:5001
+  api:
+    build: ./backend
+    ports:
+      - 5001:5001
+    environment:
+      - MONGO_URI=mongodb+srv://satyam-chaturvedi:satyam-chaturvedi@satyamcluster.yvb6qzy.mongodb.net/mern-auth?retryWrites=true&w=majority&appName=satyamCluster
+      - PORT=5001
